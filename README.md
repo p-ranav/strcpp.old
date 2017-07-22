@@ -23,7 +23,9 @@ int main() {
     result = strcpp::split(input, ", ");            // result = ["a", "b", "c", "d", "e"]
 
     input = "LOGGER::ERROR::Error Message!";
-    auto message = strcpp::split(input, "::")[2];   // result = "Error Message!"
+    auto message = strcpp::split(input, "::")[2];   // message = "Error Message!"
+
+    auto length = strcpp::length(message);          // length = 14
   }
 
   return 0;

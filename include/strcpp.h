@@ -3,6 +3,15 @@
 #include <vector>
 
 namespace strcpp {
+
+  // returns length of input string
+  size_t length(std::string input) {
+    return input.size();
+  }
+
+  // split string based on a delimiter string
+  // supports multi-character delimiter
+  // returns a vector of substrings after split
   std::vector<std::string> split(std::string input, std::string delimiter, 
     std::vector<std::string>& result = std::vector<std::string>()) {
     size_t counter_position = 0;
@@ -19,4 +28,5 @@ namespace strcpp {
     }
     return result;
   }
+
 }
