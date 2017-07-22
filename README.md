@@ -48,6 +48,10 @@ int main() {
     if (strcpp::contains(input, "error::", true)) {       // containment check - ignore case
       std::cout << "We have a problem!" << std::endl;
     }
+
+    if (strcpp::contains(input, "PROBLEM", true)) {       // containment check - ignore case
+      std::cout << "Message contains problem" << std::endl;
+    }
   }
   return 0;
 }

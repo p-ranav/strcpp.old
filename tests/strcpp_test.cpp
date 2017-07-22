@@ -22,11 +22,17 @@ void split_test() {
 
 void contains_test() {
   std::string input = "ERROR::Houston, we have a problem!";
+
   if (strcpp::contains(input, "ERROR")) {               // containment check - case sensitive
     std::cout << "We have a problem!" << std::endl;
   }
+
   if (strcpp::contains(input, "error::", true)) {       // containment check - ignore case
     std::cout << "We have a problem!" << std::endl;
+  }
+
+  if (strcpp::contains(input, "PROBLEM", true)) {       // containment check - ignore case
+    std::cout << "Message contains problem" << std::endl;
   }
 }
 
