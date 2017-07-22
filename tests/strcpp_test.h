@@ -35,11 +35,3 @@ void contains_test() {
     std::cout << "Message contains problem" << std::endl;
   }
 }
-
-int main() {
-  split_test();
-  contains_test();
-
-  system("PAUSE");
-  return 0;
-}
