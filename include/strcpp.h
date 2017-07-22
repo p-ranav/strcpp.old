@@ -221,8 +221,13 @@ namespace strcpp {
   // join a vector of strings into a single string
   std::string join(std::vector<std::string> input, std::string connector = "") {
     std::string result;
+    size_t max_connector_count = input.size() - 1;
     for (auto& s : input) {
-      result += s + connector;
+      if (max_connector_count > 0)
+        result += s + connector;
+      else
+        result += s;
+      max_connector_count--;
     }
     return result;
   }

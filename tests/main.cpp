@@ -139,11 +139,16 @@ void trim_test() {
 }
 
 void join_test() {
-  std::string input = "This. is. not. how. sentences. work.";            // wow such a sentence
-  auto split_string = strcpp::split(input, ". ");                        // split using period
-  std::string joined_string = strcpp::join(split_string, " ");           // join result of split
-  std::string output = strcpp::replace(joined_string, " not", "");       // remove the word 'not'
+  std::string input = "This. is. not. how. sentences. work.";        // wow such a sentence
+  auto split_string = strcpp::split(input, ". ");                    // split using period
+  std::string joined_string = strcpp::join(split_string, " ");       // join result of split
+  std::string output = strcpp::replace(joined_string, " not", "");   // remove the word 'not'
   std::cout << output << std::endl;
+
+  input = "Transaction_date,Product,Price,Payment_Type";             // some csv data
+  split_string = strcpp::split(input, ",");                          // split using comma
+  output = strcpp::join(split_string, "::");                         // join result of split
+  std::cout << output << std::endl;                                  // "Transaction_date::Product::Price::Payment_Type"
 }
 
 int main() {
