@@ -1,4 +1,4 @@
-# String Manipulation Header-only Library for C++
+# String Manipulation API for C++
 
 ## strcpp::split
 
