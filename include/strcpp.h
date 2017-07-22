@@ -24,6 +24,37 @@ namespace strcpp {
     return result;
   }
 
+  // returns a sliced string
+  std::string slice(std::string input, int start_index, int end_index = std::string::npos) {
+    std::string result;
+    if (end_index == std::string::npos) {
+      if (start_index < 0) {
+        for (int i = static_cast<int>(input.size() + start_index); i < input.size(); i++) {
+          result += input[i];
+        }
+      }
+      else {
+        for (int i = static_cast<int>(start_index); i < input.size(); i++) {
+          result += input[i];
+        }
+      }
+    }
+    else {
+      if (end_index < 0) {
+        for (int i = static_cast<int>(start_index); i < input.size() + end_index; i++) {
+          result += input[i];
+        }
+      }
+      else {
+        for (int i = start_index; i < end_index; i++) {
+          result += input[i];
+        }
+      }
+    }
+
+    return result;
+  }
+
   // split string based on a delimiter string
   // supports multi-character delimiter
   // returns a vector of substrings after split

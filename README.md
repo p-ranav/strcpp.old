@@ -29,7 +29,25 @@ int main() {
 }
 ```
 
-## Containment Check
+## Slice that Pie!
+```cpp
+#include <strcpp.h>
+
+int main() {
+  std::string input = "Hello World";
+  // End index is optional and defaults to end of string
+  std::cout << strcpp::slice(input, 0) << std::endl;     // All but the first zero characters  - "Hello World"
+  std::cout << strcpp::slice(input, 0, 1) << std::endl;  // Just the first character           - "H"
+  std::cout << strcpp::slice(input, 3) << std::endl;     // All but the first three characters - "lo World"
+  std::cout << strcpp::slice(input, 0, 5) << std::endl;  // Just the first five characters     - "Hello"
+  std::cout << strcpp::slice(input, 3, 8) << std::endl;  // After third till eigth character   - "lo Wo"
+  std::cout << strcpp::slice(input, -3) << std::endl;    // Just the last three characters     - "rld"
+  std::cout << strcpp::slice(input, 0, -3) << std::endl; // All but the last three characters  - "Hello Wo"
+  return 0;
+}
+```
+
+## String Containment
 
 ```cpp
 #include <strcpp.h>
