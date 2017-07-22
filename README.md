@@ -131,7 +131,7 @@
 }
 ```
 
-## Find and Replace sub-string in input string
+## Find and replace sub-string in input string
 
 ```cpp
 {
@@ -151,7 +151,7 @@
 }
 ```
 
-## Bulk Find and Replace using Translation Tables
+## Bulk find and replace multiple sub-strings using translation tables
 
 ```cpp
 {
