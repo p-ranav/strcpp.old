@@ -167,6 +167,17 @@
 }
 ```
 
+## Stripping whitespaces from either end of an input string
+
+```cpp
+{
+  std::string input = "   Hello World!   ";
+  std::cout << strcpp::strip(input) << std::endl;    // "Hello World!"
+  std::cout << strcpp::lstrip(input) << std::endl;   // "Hello World!   "
+  std::cout << strcpp::rstrip(input) << std::endl;   // "   Hello World!"
+}
+```
+
 ## LICENSE
 
 Copyright (c) 2017 Pranav Srinivas Kumar <pranav.srinivas.kumar@gmail.com>
