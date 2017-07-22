@@ -78,6 +78,9 @@ void count_test() {
   std::cout << strcpp::count(input, " W") << std::endl;         // prints 1
   std::cout << strcpp::count(input, " wo") << std::endl;        // prints 0
   std::cout << strcpp::count(input, " wo", true) << std::endl;  // prints 1 - ignores case
+
+  std::string them_spaces = "Count, the number of          spaces";
+  std::cout << strcpp::count(them_spaces, " ") << std::endl;    // prints 13
 }
 
 int main() {
