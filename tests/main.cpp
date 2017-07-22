@@ -131,6 +131,13 @@ void translation_test() {
   std::cout << translated << std::endl;                          // "Appetite comes with eating."
 }
 
+void strip_test() {
+  std::string input = "   Hello World!   ";
+  std::cout << strcpp::strip(input) << std::endl;    // "Hello World!"
+  std::cout << strcpp::lstrip(input) << std::endl;   // "Hello World!   "
+  std::cout << strcpp::rstrip(input) << std::endl;   // "   Hello World!"
+}
+
 int main() {
   split_test();
   slice_test();
@@ -141,7 +148,7 @@ int main() {
   case_change_test();
   replace_test();
   translation_test();
-  // TODO: strip, lstrip, rstrip
+  strip_test();
   system("PAUSE");
   return 0;
 }

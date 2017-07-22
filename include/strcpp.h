@@ -4,6 +4,7 @@
 #include <vector>
 #include <map>
 #include <algorithm>
+#include <cctype>
 
 namespace strcpp {
 
@@ -185,12 +186,36 @@ namespace strcpp {
     return result;
   }
 
+  // bulk find and replace sub-string in input string using translation table
   std::string translate(std::string input, std::map<std::string, std::string> translation_table) {
     std::string result = input;
     for (auto& pair : translation_table) {
       result = replace(result, pair.first, pair.second);
     }
     return result;
+  }
+
+  // strip white spaces from the left end of an input string
+  std::string lstrip(std::string input) {
+    std::string result = input;
+    result.erase(result.begin(), std::find_if(result.begin(), result.end(), [](int ch) {
+      return !std::isspace(ch);
+    }));
+    return result;
+  }
+
+  // strip white spaces from right end of an input string
+  std::string rstrip(std::string input) {
+    std::string result = input;
+    result.erase(std::find_if(result.rbegin(), result.rend(), [](int ch) {
+      return !std::isspace(ch);
+    }).base(), result.end());
+    return result;
+  }
+
+  // strip white spaces from either end of an input string
+  std::string strip(std::string input) {
+    return lstrip(rstrip(input));
   }
 
 }
