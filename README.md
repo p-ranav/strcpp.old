@@ -239,7 +239,7 @@
 }
 ```
 
-### strcpp::upper
+## strcpp::upper
 
 ```cpp
 {
