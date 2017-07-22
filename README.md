@@ -1,4 +1,4 @@
-# String Manipulation Library for C++
+# String Manipulation Header-only Library for C++
 
 ## Split that String!
 
