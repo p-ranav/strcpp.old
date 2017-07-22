@@ -1,4 +1,4 @@
-#include <strcpp.h>
+﻿#include <strcpp.h>
 
 void split_test() {
   std::string input = "We are the champions";     // input string
@@ -119,6 +119,18 @@ void replace_test() {
   std::cout << strcpp::replace(input, "P", "T", 2) << std::endl;  // "Teter Tiper picked a peck of pickled peppers."
 }
 
+void translation_test() {
+  std::string input = "1X444 2X3AB *^$RB (F(QP.";
+  std::map<std::string, std::string> translation_table = {
+    { "1X444", "Appetite"},
+    { "2X3AB", "comes" },
+    { "*^$RB", "with" }, 
+    { "(F(QP", "eating" }
+  };
+  std::string translated = strcpp::translate(input, translation_table);
+  std::cout << translated << std::endl;                          // "Appetite comes with eating."
+}
+
 int main() {
   split_test();
   slice_test();
@@ -128,7 +140,8 @@ int main() {
   repeat_test();
   case_change_test();
   replace_test();
-  // TODO: find, replace, strip, lstrip, rstrip, and translate
+  translation_test();
+  // TODO: strip, lstrip, rstrip
   system("PAUSE");
   return 0;
 }

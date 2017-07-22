@@ -187,7 +187,9 @@ namespace strcpp {
 
   std::string translate(std::string input, std::map<std::string, std::string> translation_table) {
     std::string result = input;
-
+    for (auto& pair : translation_table) {
+      result = replace(result, pair.first, pair.second);
+    }
     return result;
   }
 
