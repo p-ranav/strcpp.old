@@ -75,4 +75,34 @@ namespace strcpp {
     return result;
   }
 
+  // checks if a string start_with input character
+  bool starts_with(std::string input, char c, bool ignore_case = false) {
+    bool result = false;
+    if (input.size() > 0) {
+      char first_character = input[0];
+      if (ignore_case) {
+        first_character = toupper(first_character);
+        c = toupper(c);
+      }
+      if (first_character == c)
+        result = true;
+    }
+    return result;
+  }
+
+  // checks if a string ends_with input character
+  bool ends_with(std::string input, char c, bool ignore_case = false) {
+    bool result = false;
+    if (input.size() > 0) {
+      char last_character = input[input.size() - 1];
+      if (ignore_case) {
+        last_character = toupper(last_character);
+        c = toupper(c);
+      }
+      if (last_character == c)
+        result = true;
+    }
+    return result;
+  }
+
 }

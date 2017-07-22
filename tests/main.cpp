@@ -49,13 +49,33 @@ void contains_test() {
   else {
     std::cout << "Input string does not contain \"PROBLEM\"\n";         // check returns false and prints message
   }
+}
 
+void starts_ends_test() {
+  std::string input = "What's up with the Quaithe?";
+
+  if (strcpp::starts_with(input, 'W')) {
+    std::cout << "Input string starts with 'W'\n";                     // check returns true and prints message
+  }
+
+  if (strcpp::starts_with(input, 'w', true)) {
+    std::cout << "Input string starts with 'w' - Case is ignored\n";   // check returns true and prints message
+  }
+
+  if (strcpp::ends_with(input, '.')) {                                 // check returns false
+    std::cout << "Input string ends with period\n";
+  }
+
+  if (strcpp::ends_with(input, '?')) {                                 // check returns true and prints message
+    std::cout << "Input string is a question\n";
+  }
 }
 
 int main() {
   split_test();
   slice_test();
   contains_test();
+  starts_ends_test();
   system("PAUSE");
   return 0;
 }

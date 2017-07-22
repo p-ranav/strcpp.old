@@ -76,6 +76,33 @@ int main() {
 }
 ```
 
+## Check if an input string starts with or ends with some character
+
+```cpp
+#include <strcpp.h>
+
+int main() {
+  std::string input = "What's up with the Quaithe?";
+
+  if (strcpp::starts_with(input, 'W')) {
+    std::cout << "Input string starts with 'W'\n";                     // check returns true and prints message
+  }
+
+  if (strcpp::starts_with(input, 'w', true)) {
+    std::cout << "Input string starts with 'w' - Case is ignored\n";   // check returns true and prints message
+  }
+
+  if (strcpp::ends_with(input, '.')) {                                 // check returns false
+    std::cout << "Input string ends with period\n";
+  }
+
+  if (strcpp::ends_with(input, '?')) {                                 // check returns true and prints message
+    std::cout << "Input string is a question\n";
+  }
+  return 0;
+}
+```
+
 ## LICENSE
 
 Copyright (c) 2017 Pranav Srinivas Kumar <pranav.srinivas.kumar@gmail.com>
