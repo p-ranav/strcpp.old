@@ -237,4 +237,11 @@ namespace strcpp {
     return  (lhs.compare(rhs) == 0);
   }
 
+  // generic find function
+  // if sub-string is found, returns the index
+  // if sub-string is not found, returns std::string::npos
+  size_t find(std::string input, std::string search) {
+    return input.find(search);
+  }
+
 }
