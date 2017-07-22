@@ -119,4 +119,13 @@ namespace strcpp {
     return result;
   }
 
+  std::string repeat(std::string input, int count, std::string connector = "") {
+    std::string result = "";
+    while (count > 0) {
+      result += input + connector;
+      count--;
+    }
+    return result;
+  }
+
 }

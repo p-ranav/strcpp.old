@@ -83,12 +83,23 @@ void count_test() {
   std::cout << strcpp::count(them_spaces, " ") << std::endl;    // prints 13
 }
 
+void repeat_test() {
+  std::string input = "Ha";
+  std::cout << strcpp::repeat(input, 5) << std::endl;      // "HaHaHaHaHa"
+  std::cout << strcpp::repeat(input, 5, " ") << std::endl; // "Ha Ha Ha Ha Ha"
+
+  input = "Ch";
+  std::cout << strcpp::repeat(strcpp::repeat(input, 2, "ooo!"), 3, " ") 
+    << std::endl;                                          // "Chooo!Chooo! Chooo!Chooo! Chooo!Chooo!"
+}
+
 int main() {
   split_test();
   slice_test();
   contains_test();
   starts_ends_test();
   count_test();
+  repeat_test();
   system("PAUSE");
   return 0;
 }

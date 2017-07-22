@@ -123,6 +123,22 @@ int main() {
 }
 ```
 
+## Repeat input string some number of times and optionally with a connector string
+
+```cpp
+#include <strcpp.h>
+
+int main() {
+  std::string input = "Ha";
+  std::cout << strcpp::repeat(input, 5) << std::endl;      // "HaHaHaHaHa"
+  std::cout << strcpp::repeat(input, 5, " ") << std::endl; // "Ha Ha Ha Ha Ha"
+
+  input = "Ch";
+  std::cout << strcpp::repeat(strcpp::repeat(input, 2, "ooo!"), 3, " ") 
+    << std::endl;                                          // "Chooo!Chooo! Chooo!Chooo! Chooo!Chooo!"
+}
+```
+
 ## LICENSE
 
 Copyright (c) 2017 Pranav Srinivas Kumar <pranav.srinivas.kumar@gmail.com>
