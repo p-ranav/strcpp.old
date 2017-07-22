@@ -2,6 +2,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <map>
 #include <algorithm>
 
 namespace strcpp {
@@ -142,6 +143,51 @@ namespace strcpp {
     std::string result;
     result.resize(input.size());
     std::transform(input.begin(), input.end(), result.begin(), ::tolower);
+    return result;
+  }
+
+  // find and replace substring in input string, optionally for a limited number of times
+  // by default, every occurrence of find_string is replaced by replace_string
+  std::string replace(std::string input, std::string find_string, 
+    std::string replace_string, int replace_count = -1) {
+    std::string result = "";
+    auto split_vector = split(input, find_string);
+    auto split_size = split_vector.size();
+    auto max_replace_count = split_size - 1;
+    if (replace_count == -1) {
+      for (auto& s : split_vector) {
+        if (max_replace_count > 0)
+          result += s + replace_string;
+        else
+          result += s;
+        max_replace_count--;
+      }
+    }
+    else {
+      for (auto& s : split_vector) {
+        if (replace_count > 0) {
+          if (max_replace_count > 0)
+            result += s + replace_string;
+          else
+            result += s;
+          max_replace_count--;
+        }
+        else {
+          if (max_replace_count > 0)
+            result += s + find_string;
+          else
+            result += s;
+          max_replace_count--;
+        }
+        replace_count--;
+      }
+    }
+    return result;
+  }
+
+  std::string translate(std::string input, std::map<std::string, std::string> translation_table) {
+    std::string result = input;
+
     return result;
   }
 

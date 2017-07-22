@@ -103,6 +103,22 @@ void case_change_test() {
   std::cout << strcpp::lower(input) << std::endl;               // "accidentally enabled caps lock!!!"
 }
 
+void replace_test() {
+  std::string input = "This is a test string.";
+  std::cout << strcpp::replace(input, "a test", "an example");    // "This is an example string."
+  std::cout << std::endl <<
+    strcpp::replace(input, "test", "") << std::endl;              // "This is a string"
+
+  input = "This is a a test string";                              // replace the first occurrence of the letter 'a'
+  std::cout << strcpp::replace(input, "a", "", 1) << std::endl;   // "This is a test string"
+
+  input = "Peter Piper picked a peck of pickled peppers.";                            
+  std::cout << strcpp::replace(input, "p", "T", 2) << std::endl;  // "Peter PiTer Ticked a peck of pickled peppers."
+
+  input = "Peter Piper picked a peck of pickled peppers.";        // Find and replace does not ignore case
+  std::cout << strcpp::replace(input, "P", "T", 2) << std::endl;  // "Teter Tiper picked a peck of pickled peppers."
+}
+
 int main() {
   split_test();
   slice_test();
@@ -111,6 +127,8 @@ int main() {
   count_test();
   repeat_test();
   case_change_test();
+  replace_test();
+  // TODO: find, replace, strip, lstrip, rstrip, and translate
   system("PAUSE");
   return 0;
 }
