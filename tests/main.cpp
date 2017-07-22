@@ -103,6 +103,17 @@ void case_change_test() {
   std::cout << strcpp::lower(input) << std::endl;               // "accidentally enabled caps lock!!!"
 }
 
+void case_check_test() {
+
+  std::string input = "Hello World!";
+  if (strcpp::is_upper(input))
+    std::cout << "There is at least one upper case character in input" << std::endl;
+
+  input = strcpp::lower(input);
+  if (strcpp::is_lower(input))
+    std::cout << "All alphabets in the input string are lower case" << std::endl;
+}
+
 void replace_test() {
   std::string input = "This is a test string.";
   std::cout << strcpp::replace(input, "a test", "an example");    // "This is an example string."
@@ -196,6 +207,7 @@ int main() {
   count_test();
   repeat_test();
   case_change_test();
+  case_check_test();
   replace_test();
   translation_test();
   trim_test();
