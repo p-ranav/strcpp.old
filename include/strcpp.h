@@ -140,54 +140,11 @@ namespace strcpp {
     return result;
   }
 
-  // returns true if even one character in the input string is upper case
-  bool is_upper(std::string input) {
-    bool result = false;
-    for (auto& c : input) {
-      if (isupper(c)) {
-        result = true;
-        break;
-      }
-    }
-    return result;
-  }
-
   // returns copy of input string that is all lower case
   std::string lower(std::string input) {
     std::string result;
     result.resize(input.size());
     std::transform(input.begin(), input.end(), result.begin(), ::tolower);
-    return result;
-  }
-
-  // returns true if all characters in the input string are lower case
-  bool is_lower(std::string input) {
-    bool result = false;
-    for (auto& c : input) {
-      if (isalpha(c)) {
-        if (islower(c)) {
-          result = true;
-        }
-        else {
-          result = false;
-        }
-      }
-    }
-    return result;
-  }
-
-  // returns true if all characters in the input string are alphabetic letters
-  bool is_alpha(std::string input) {
-    bool result = false;
-    for (auto& c : input) {
-      if (isalpha(c)) {
-        result = true;
-      }
-      else {
-        result = false;
-        break;
-      }
-    }
     return result;
   }
 

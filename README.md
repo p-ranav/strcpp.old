@@ -248,48 +248,12 @@
 }
 ```
 
-## strcpp::is_upper
-
-```cpp
-{
-  std::string input = "Hello World!";
-  if (strcpp::is_upper(input))
-    std::cout << "There is at least one upper case character in input" << std::endl;
-}
-```
-
 ## strcpp::lower
 
 ```cpp
 {
   std::string input = "ACCIDENTALLY ENABLED CAPS LOCK!!!";
   std::cout << strcpp::lower(input) << std::endl;               // "accidentally enabled caps lock!!!"
-}
-```
-
-## strcpp::is_lower
-
-```cpp
-{
-  std::string input = "Hello World!";
-  input = strcpp::lower(input);
-  if (strcpp::is_lower(input))
-    std::cout << "All alphabetic letters in the input string are lower case" << std::endl;
-}
-```
-
-## strcpp::is_alpha
-
-```cpp
-{
-  std::string input = "Hello World!";
-  if (strcpp::is_alpha(input)) // returns false because of whitespace and '!' symbol
-    std::cout << "All characters in the input string are alphabetic letters" << std::endl;
-
-  input = strcpp::replace(input, " ", "");
-  input = strcpp::replace(input, "!", "");
-  if (strcpp::is_alpha(input)) // returns true
-    std::cout << "All characters in the input string are alphabetic letters" << std::endl;
 }
 ```
 
