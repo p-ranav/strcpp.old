@@ -167,7 +167,7 @@
 }
 ```
 
-## Stripping whitespaces from either end of an input string
+## Trim whitespaces from either end of an input string
 
 ```cpp
 {

@@ -195,8 +195,8 @@ namespace strcpp {
     return result;
   }
 
-  // strip white spaces from the left end of an input string
-  std::string lstrip(std::string input) {
+  // trim white spaces from the left end of an input string
+  std::string ltrim(std::string input) {
     std::string result = input;
     result.erase(result.begin(), std::find_if(result.begin(), result.end(), [](int ch) {
       return !std::isspace(ch);
@@ -204,8 +204,8 @@ namespace strcpp {
     return result;
   }
 
-  // strip white spaces from right end of an input string
-  std::string rstrip(std::string input) {
+  // trim white spaces from right end of an input string
+  std::string rtrim(std::string input) {
     std::string result = input;
     result.erase(std::find_if(result.rbegin(), result.rend(), [](int ch) {
       return !std::isspace(ch);
@@ -213,9 +213,9 @@ namespace strcpp {
     return result;
   }
 
-  // strip white spaces from either end of an input string
-  std::string strip(std::string input) {
-    return lstrip(rstrip(input));
+  // trim white spaces from either end of an input string
+  std::string trim(std::string input) {
+    return ltrim(rtrim(input));
   }
 
 }
