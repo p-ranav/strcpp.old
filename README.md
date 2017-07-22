@@ -48,7 +48,7 @@ int main() {
 }
 ```
 
-## Check if string contains sub-string
+## Check if an input string contains sub-string
 
 ```cpp
 #include <strcpp.h>
