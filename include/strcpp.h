@@ -176,6 +176,21 @@ namespace strcpp {
     return result;
   }
 
+  // returns true if all characters in the input string are alphabetic letters
+  bool is_alpha(std::string input) {
+    bool result = false;
+    for (auto& c : input) {
+      if (isalpha(c)) {
+        result = true;
+      }
+      else {
+        result = false;
+        break;
+      }
+    }
+    return result;
+  }
+
   // find and replace substring in input string, optionally for a limited number of times
   // by default, every occurrence of find_string is replaced by replace_string
   std::string replace(std::string input, std::string find_string, 

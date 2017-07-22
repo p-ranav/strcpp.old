@@ -104,14 +104,24 @@ void case_change_test() {
 }
 
 void case_check_test() {
-
   std::string input = "Hello World!";
   if (strcpp::is_upper(input))
     std::cout << "There is at least one upper case character in input" << std::endl;
 
   input = strcpp::lower(input);
   if (strcpp::is_lower(input))
-    std::cout << "All alphabets in the input string are lower case" << std::endl;
+    std::cout << "All alphabetic letters in the input string are lower case" << std::endl;
+}
+
+void is_alpha_test() {
+  std::string input = "Hello World!";
+  if (strcpp::is_alpha(input))
+    std::cout << "All characters in the input string are alphabetic letters" << std::endl;
+
+  input = strcpp::replace(input, " ", "");
+  input = strcpp::replace(input, "!", "");
+  if (strcpp::is_alpha(input))
+    std::cout << "All characters in the input string are alphabetic letters" << std::endl;
 }
 
 void replace_test() {
@@ -208,6 +218,7 @@ int main() {
   repeat_test();
   case_change_test();
   case_check_test();
+  is_alpha_test();
   replace_test();
   translation_test();
   trim_test();

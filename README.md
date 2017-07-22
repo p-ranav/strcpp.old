@@ -274,7 +274,22 @@
   std::string input = "Hello World!";
   input = strcpp::lower(input);
   if (strcpp::is_lower(input))
-    std::cout << "All alphabets in the input string are lower case" << std::endl;
+    std::cout << "All alphabetic letters in the input string are lower case" << std::endl;
+}
+```
+
+## strcpp::is_alpha
+
+```cpp
+{
+  std::string input = "Hello World!";
+  if (strcpp::is_alpha(input)) // returns false because of whitespace and '!' symbol
+    std::cout << "All characters in the input string are alphabetic letters" << std::endl;
+
+  input = strcpp::replace(input, " ", "");
+  input = strcpp::replace(input, "!", "");
+  if (strcpp::is_alpha(input)) // returns true
+    std::cout << "All characters in the input string are alphabetic letters" << std::endl;
 }
 ```
 
