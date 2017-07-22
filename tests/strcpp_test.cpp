@@ -20,8 +20,20 @@ void split_test() {
   auto length = strcpp::length(message);          // length = 14
 }
 
+void contains_test() {
+  std::string input = "ERROR::Houston, we have a problem!";
+  if (strcpp::contains(input, "ERROR")) {               // containment check - case sensitive
+    std::cout << "We have a problem!" << std::endl;
+  }
+  if (strcpp::contains(input, "error::", true)) {       // containment check - ignore case
+    std::cout << "We have a problem!" << std::endl;
+  }
+}
+
 int main() {
   split_test();
+  contains_test();
+
   system("PAUSE");
   return 0;
 }

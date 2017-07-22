@@ -32,6 +32,27 @@ int main() {
 }
 ```
 
+## Containment Check
+
+```cpp
+#include <strcpp.h>
+
+int main() {
+  {
+    std::string input = "ERROR::Houston, we have a problem!";
+
+    if (strcpp::contains(input, "ERROR")) {               // containment check - case sensitive
+      std::cout << "We have a problem!" << std::endl;
+    }
+
+    if (strcpp::contains(input, "error::", true)) {       // containment check - ignore case
+      std::cout << "We have a problem!" << std::endl;
+    }
+  }
+  return 0;
+}
+```
+
 ## LICENSE
 
 Copyright (c) 2017 Pranav Srinivas Kumar <pranav.srinivas.kumar@gmail.com>

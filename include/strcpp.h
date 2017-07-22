@@ -1,12 +1,26 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <algorithm>
 
 namespace strcpp {
 
   // returns length of input string
   size_t length(std::string input) {
     return input.size();
+  }
+
+  // returns true/false if input string contains search string
+  bool contains(std::string input, std::string search_string, bool ignore_case = false) {
+    bool result = false;
+    if (ignore_case) {
+      std::transform(input.begin(), input.end(), input.begin(), ::toupper);
+      std::transform(search_string.begin(), search_string.end(), search_string.begin(), ::toupper);
+    }
+    if (input.find(search_string) != std::string::npos) {
+      result = true;
+    }
+    return result;
   }
 
   // split string based on a delimiter string
