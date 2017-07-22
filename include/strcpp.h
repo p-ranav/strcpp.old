@@ -267,4 +267,14 @@ namespace strcpp {
     return results;
   }
 
+  // returns a formatted string for given the format and a vector of inputs
+  std::string format(std::string format, std::vector<std::string> inputs) {
+    std::string result = format;
+    for (size_t i = 0; i < inputs.size(); i++) {
+      std::string find = "{" + std::to_string(i) + "}";
+      result = replace(result, find, inputs[i]);
+    }
+    return result;
+  }
+
 }

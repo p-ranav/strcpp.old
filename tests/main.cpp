@@ -180,6 +180,12 @@ void find_regex_test() {
   // results: ["/home/pranav/dev/FILE_SomeStringOfInterest_EVENT.bash", "SomeStringOfInterest"]
 }
 
+void format_test() {
+  std::string output = strcpp::format("Roses are {0}, Violets are {1}, Sugar is {2}, And so are {3}!",
+                                      { "red", "blue", "sweet", "you" });
+  std::cout << output << std::endl; // "Roses are red, Violets are blue, Sugar is sweet, And so are you!"
+}
+
 int main() {
   split_test();
   slice_test();
@@ -194,6 +200,7 @@ int main() {
   join_test();
   find_test();
   find_regex_test();
+  format_test();
   system("PAUSE");
   return 0;
 }
