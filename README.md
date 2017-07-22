@@ -29,10 +29,10 @@
   std::string output = strcpp::replace(joined_string, " not", "");   // remove the word 'not'
   std::cout << output << std::endl;
 
-  input = "Transaction_date,Product,Price,Payment_Type";             // some csv data
-  split_string = strcpp::split(input, ",");                          // split using comma
+  input = "Transaction_date, Product, Price, State";                 // some csv data
+  split_string = strcpp::split(input, ", ");                         // split using comma
   output = strcpp::join(split_string, "::");                         // join result of split
-  std::cout << output << std::endl;                                  // "Transaction_date::Product::Price::Payment_Type"
+  std::cout << output << std::endl;                                  // "Transaction_date::Product::Price::State"
 }
 ```
 
