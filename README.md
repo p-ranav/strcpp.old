@@ -4,7 +4,6 @@
 
 ```cpp
 {
-
   std::string input = "We are the champions";     // input string
   std::vector<std::string> result;                // result vector
 
@@ -12,17 +11,23 @@
   result = strcpp::split(input, " a");            // result = ["We", "re the champions"]
   result = strcpp::split(input, "ions");          // result = ["We are the champ"]
 
-  input = "a,b,c,d,e";
-  result = strcpp::split(input, ",");             // result = ["a", "b", "c", "d", "e"]
-
   input = "a, b, c, d, e";
   result = strcpp::split(input, ", ");            // result = ["a", "b", "c", "d", "e"]
 
   input = "LOGGER::ERROR::Error Message!";
   auto message = strcpp::split(input, "::")[2];   // message = "Error Message!"
+}
+```
 
-  auto length = strcpp::length(message);          // length = 14
+## strcpp::join
 
+```cpp
+{
+  std::string input = "This. is. not. how. sentences. work.";            // wow such a sentence
+  auto split_string = strcpp::split(input, ". ");                        // split using period
+  std::string joined_string = strcpp::join(split_string, " ");           // join result of split
+  std::string output = strcpp::replace(joined_string, " not", "");       // remove the word 'not'
+  std::cout << output << std::endl;
 }
 ```
 
@@ -30,7 +35,6 @@
 
 ```cpp
 {
-
   std::string input = "Hello World";
   // End index is optional and defaults to end of string
   std::cout << strcpp::slice(input, 0) << std::endl;     // All but the first zero characters  - "Hello World"
@@ -40,31 +44,24 @@
   std::cout << strcpp::slice(input, 3, 8) << std::endl;  // After third till eigth character   - "lo Wo"
   std::cout << strcpp::slice(input, -3) << std::endl;    // Just the last three characters     - "rld"
   std::cout << strcpp::slice(input, 0, -3) << std::endl; // All but the last three characters  - "Hello Wo"
-
 }
 ```
 
 ## strcpp::contains
 ```cpp
 {
-
   std::string input = "ERROR::Houston, we have a problem!";
 
-  if (strcpp::contains(input, "ERROR")) {                               // containment check - case sensitive
+  if (strcpp::contains(input, "ERROR"))                                 // containment check - case sensitive
     std::cout << "Input string contains \"ERROR\"" << std::endl;        // check returns true and prints message
-  }
 
-  if (strcpp::contains(input, "error::", true)) {                       // containment check - ignore case
+  if (strcpp::contains(input, "error::", true))                         // containment check - ignore case
     std::cout << "Input string contains \"error::\"" << std::endl;      // check returns true and prints message
-  }
 
-  if (strcpp::contains(input, "PROBLEM")) {                             // containment check - ignore case
+  if (strcpp::contains(input, "PROBLEM"))                               // containment check - ignore case
     std::cout << "Input string contains \"PROBLEM\"\n";
-  }
-  else {
+  else
     std::cout << "Input string does not contain \"PROBLEM\"\n";         // check returns false and prints message
-  }
-
 }
 ```
 
@@ -72,43 +69,41 @@
 
 ```cpp
 {
-
   std::string input = "Hello World!";
-  std::cout << strcpp::count(input, "l") << std::endl;          // prints 3
-  std::cout << strcpp::count(input, "llo") << std::endl;        // prints 1
-  std::cout << strcpp::count(input, " W") << std::endl;         // prints 1
-  std::cout << strcpp::count(input, " wo") << std::endl;        // prints 0
-  std::cout << strcpp::count(input, " wo", true) << std::endl;  // prints 1 - ignores case
-
+  std::cout << strcpp::count(input, "l") << std::endl;                  // prints 3
+  std::cout << strcpp::count(input, "llo") << std::endl;                // prints 1
+  std::cout << strcpp::count(input, " W") << std::endl;                 // prints 1
+  std::cout << strcpp::count(input, " wo") << std::endl;                // prints 0
+  std::cout << strcpp::count(input, " wo", true) << std::endl;          // prints 1 - ignores case
 
   std::string them_spaces = "Count, the number of          spaces";
-  std::cout << strcpp::count(them_spaces, " ") << std::endl;    // prints 13
-
+  std::cout << strcpp::count(them_spaces, " ") << std::endl;            // prints 13
 }
 ```
 
-## strcpp::starts_with & strcpp::ends_with
+## strcpp::starts_with
 
 ```cpp
 {
   std::string input = "What's up with the Quaithe?";
-
-  if (strcpp::starts_with(input, 'W')) {
+  if (strcpp::starts_with(input, 'W'))
     std::cout << "Input string starts with 'W'\n";                     // check returns true and prints message
-  }
 
-  if (strcpp::starts_with(input, 'w', true)) {
+  if (strcpp::starts_with(input, 'w', true))
     std::cout << "Input string starts with 'w' - Case is ignored\n";   // check returns true and prints message
-  }
+}
+```
 
-  if (strcpp::ends_with(input, '.')) {                                 // check returns false
+### strcpp::ends_with
+
+```cpp
+{
+  std::string input = "What's up with the Quaithe?";
+  if (strcpp::ends_with(input, '.'))                                   // check returns false
     std::cout << "Input string ends with period\n";
-  }
 
-  if (strcpp::ends_with(input, '?')) {                                 // check returns true and prints message
+  if (strcpp::ends_with(input, '?'))                                   // check returns true and prints message
     std::cout << "Input string is a question\n";
-  }
-
 }
 ```
 
@@ -116,7 +111,6 @@
 
 ```cpp
 {
-
   std::string input = "Ha";
   std::cout << strcpp::repeat(input, 5) << std::endl;           // "HaHaHaHaHa"
   std::cout << strcpp::repeat(input, 5, " ") << std::endl;      // "Ha Ha Ha Ha Ha"
@@ -174,18 +168,6 @@
   std::cout << strcpp::strip(input) << std::endl;    // "Hello World!"
   std::cout << strcpp::lstrip(input) << std::endl;   // "Hello World!   "
   std::cout << strcpp::rstrip(input) << std::endl;   // "   Hello World!"
-}
-```
-
-## strcpp::join
-
-```cpp
-{
-  std::string input = "This. is. not. how. sentences. work.";            // wow such a sentence
-  auto split_string = strcpp::split(input, ". ");                        // split using period
-  std::string joined_string = strcpp::join(split_string, " ");           // join result of split
-  std::string output = strcpp::replace(joined_string, " not", "");       // remove the word 'not'
-  std::cout << output << std::endl;
 }
 ```
 
