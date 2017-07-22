@@ -240,8 +240,18 @@ namespace strcpp {
   // generic find function
   // if sub-string is found, returns the index
   // if sub-string is not found, returns std::string::npos
-  size_t find(std::string input, std::string search) {
-    return input.find(search);
+  size_t find(std::string input, std::string search_string) {
+    return input.find(search_string);
+  }
+
+  // finds first occurrence of sub-string in input string
+  size_t find_first(std::string input, std::string search_string) {
+    return input.find_first_of(search_string);
+  }
+
+  // finds last occurrence of sub-string in input string
+  size_t find_last(std::string input, std::string search_string) {
+    return input.find_last_of(search_string);
   }
 
 }

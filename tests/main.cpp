@@ -151,6 +151,18 @@ void join_test() {
   std::cout << output << std::endl;                                  // "Transaction_date::Product::Price::State"
 }
 
+void find_test() {
+  std::string input = "I scream, you scream, we all scream for icecream!";
+  size_t find_index = strcpp::find(input, "you");                            // Index = 10
+  std::cout << find_index << std::endl;
+
+  find_index = strcpp::find_first(input, "cream");                           // Index = 3
+  std::cout << find_index << std::endl;
+
+  find_index = strcpp::find_last(input, "cream");                            // Index = 47
+  std::cout << find_index << std::endl;
+}
+
 int main() {
   split_test();
   slice_test();
@@ -163,6 +175,7 @@ int main() {
   translation_test();
   trim_test();
   join_test();
+  find_test();
   system("PAUSE");
   return 0;
 }
