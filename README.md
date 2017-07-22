@@ -155,7 +155,7 @@
 
 ```cpp
 {
-  std::string input = "1X444 2X3AB *^$RB (F(QP.";                 // coded input message
+  std::string input = "1X444 2X3AB *^$RB (F(QP.";                          // coded input message
   std::map<std::string, std::string> translation_table = {
     { "1X444", "Appetite"},
     { "2X3AB", "comes" },
@@ -163,7 +163,7 @@
     { "(F(QP", "eating" }
   };
   std::string translated = strcpp::translate(input, translation_table);
-  std::cout << translated << std::endl;                          // "Appetite comes with eating."
+  std::cout << translated << std::endl;                                    // "Appetite comes with eating."
 }
 ```
 
