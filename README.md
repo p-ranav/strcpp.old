@@ -137,7 +137,7 @@ int main() {
   auto result = strcpp::repeat(
                   strcpp::repeat(input, 2, "ooo!"), 
                 3, " ");
-  std::cout << result << std::endl;                             // "Chooo!Chooo! Chooo!Chooo! Chooo!Chooo!"                                                    
+  std::cout << result << std::endl;                             // "Chooo!Chooo! Chooo!Chooo! Chooo!Chooo!"
 }
 ```
 
