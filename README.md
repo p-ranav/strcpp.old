@@ -169,7 +169,7 @@
         Speed : 378
         Mass  :	 32
         Speed : 400
-	      Mass  :	 30)");
+	Mass  :	 30)");
   std::string regex_string = R"(Speed : \d*)";
   auto results = strcpp::find_regex(log, regex_string);  
   // ["Speed : 366", "Speed : 378", "Speed : 400"]
