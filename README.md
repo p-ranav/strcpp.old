@@ -138,6 +138,7 @@ int main() {
                   strcpp::repeat(input, 2, "ooo!"), 
                 3, " ");
   std::cout << result << std::endl;                             // "Chooo!Chooo! Chooo!Chooo! Chooo!Chooo!"
+  return 0;
 }
 ```
 
