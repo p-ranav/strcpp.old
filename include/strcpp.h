@@ -105,4 +105,18 @@ namespace strcpp {
     return result;
   }
 
+  // count number of times a substring appears in input string
+  size_t count(std::string input, std::string search_string, bool ignore_case = false) {
+    size_t result = 0;
+    if (contains(input, search_string, ignore_case)) {
+      if (ignore_case) {
+        std::transform(input.begin(), input.end(), input.begin(), ::toupper);
+        std::transform(search_string.begin(), search_string.end(), search_string.begin(), ::toupper);
+      }
+      auto split_vector = split(input, search_string);
+      result = split_vector.size() - 1;
+    }
+    return result;
+  }
+
 }

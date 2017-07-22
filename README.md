@@ -76,6 +76,22 @@ int main() {
 }
 ```
 
+## Count number of times an input string contains a sub-string
+
+```cpp
+#include <strcpp.h>
+
+int main() {
+  std::string input = "Hello World!";
+  std::cout << strcpp::count(input, "l") << std::endl;          // prints 3
+  std::cout << strcpp::count(input, "llo") << std::endl;        // prints 1
+  std::cout << strcpp::count(input, " W") << std::endl;         // prints 1
+  std::cout << strcpp::count(input, " wo") << std::endl;        // prints 0
+  std::cout << strcpp::count(input, " wo", true) << std::endl;  // prints 1 - ignores case
+  return 0;
+}
+```
+
 ## Check if an input string starts with or ends with some character
 
 ```cpp

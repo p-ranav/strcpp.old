@@ -71,11 +71,21 @@ void starts_ends_test() {
   }
 }
 
+void count_test() {
+  std::string input = "Hello World!";
+  std::cout << strcpp::count(input, "l") << std::endl;          // prints 3
+  std::cout << strcpp::count(input, "llo") << std::endl;        // prints 1
+  std::cout << strcpp::count(input, " W") << std::endl;         // prints 1
+  std::cout << strcpp::count(input, " wo") << std::endl;        // prints 0
+  std::cout << strcpp::count(input, " wo", true) << std::endl;  // prints 1 - ignores case
+}
+
 int main() {
   split_test();
   slice_test();
   contains_test();
   starts_ends_test();
+  count_test();
   system("PAUSE");
   return 0;
 }
