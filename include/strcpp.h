@@ -218,4 +218,13 @@ namespace strcpp {
     return ltrim(rtrim(input));
   }
 
+  // join a vector of strings into a single string
+  std::string join(std::vector<std::string> input, std::string connector = "") {
+    std::string result;
+    for (auto& s : input) {
+      result += s + connector;
+    }
+    return result;
+  }
+
 }

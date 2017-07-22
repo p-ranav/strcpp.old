@@ -138,6 +138,14 @@ void trim_test() {
   std::cout << strcpp::rtrim(input) << std::endl;   // "   Hello World!"
 }
 
+void join_test() {
+  std::string input = "This. is. not. how. sentences. work.";            // wow such a sentence
+  auto split_string = strcpp::split(input, ". ");                        // split using period
+  std::string joined_string = strcpp::join(split_string, " ");           // join result of split
+  std::string output = strcpp::replace(joined_string, " not", "");       // remove the word 'not'
+  std::cout << output << std::endl;
+}
+
 int main() {
   split_test();
   slice_test();
@@ -149,6 +157,7 @@ int main() {
   replace_test();
   translation_test();
   trim_test();
+  join_test();
   system("PAUSE");
   return 0;
 }

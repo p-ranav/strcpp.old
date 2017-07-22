@@ -1,6 +1,6 @@
 # String Manipulation Header-only Library for C++
 
-## Split an input string using a delimiter string
+## strcpp::split
 
 ```cpp
 {
@@ -26,7 +26,7 @@
 }
 ```
 
-## Slice an input string like in Python
+## strcpp::slice
 
 ```cpp
 {
@@ -44,8 +44,7 @@
 }
 ```
 
-## Check if an input string contains sub-string
-
+## strcpp::contains
 ```cpp
 {
 
@@ -69,7 +68,7 @@
 }
 ```
 
-## Count number of times an input string contains a sub-string
+## strcpp::count
 
 ```cpp
 {
@@ -88,7 +87,7 @@
 }
 ```
 
-## Check if an input string starts with or ends with some character
+## strcpp::starts_with & strcpp::ends_with
 
 ```cpp
 {
@@ -113,7 +112,7 @@
 }
 ```
 
-## Repeat input string for some number of times, optionally with a connector string
+## strcpp::repeat
 
 ```cpp
 {
@@ -131,7 +130,7 @@
 }
 ```
 
-## Find and replace sub-string in input string
+## strcpp::replace
 
 ```cpp
 {
@@ -151,7 +150,7 @@
 }
 ```
 
-## Bulk find and replace multiple sub-strings using translation tables
+## strcpp::translate
 
 ```cpp
 {
@@ -167,7 +166,7 @@
 }
 ```
 
-## Trim whitespaces from either end of an input string
+## strcpp::trim
 
 ```cpp
 {
@@ -175,6 +174,18 @@
   std::cout << strcpp::strip(input) << std::endl;    // "Hello World!"
   std::cout << strcpp::lstrip(input) << std::endl;   // "Hello World!   "
   std::cout << strcpp::rstrip(input) << std::endl;   // "   Hello World!"
+}
+```
+
+## strcpp::join
+
+```cpp
+{
+  std::string input = "This. is. not. how. sentences. work.";            // wow such a sentence
+  auto split_string = strcpp::split(input, ". ");                        // split using period
+  std::string joined_string = strcpp::join(split_string, " ");           // join result of split
+  std::string output = strcpp::replace(joined_string, " not", "");       // remove the word 'not'
+  std::cout << output << std::endl;
 }
 ```
 
