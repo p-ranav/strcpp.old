@@ -119,6 +119,7 @@ namespace strcpp {
     return result;
   }
 
+  // repeat input string for count number of times, optionally with a connector string
   std::string repeat(std::string input, int count, std::string connector = "") {
     std::string result = "";
     while (count > 0) {
@@ -128,6 +129,7 @@ namespace strcpp {
     return result;
   }
 
+  // returns copy of input string that is all upper case
   std::string upper(std::string input) {
     std::string result;
     result.resize(input.size());
@@ -135,6 +137,7 @@ namespace strcpp {
     return result;
   }
 
+  // returns copy of input string that is all lower case
   std::string lower(std::string input) {
     std::string result;
     result.resize(input.size());
