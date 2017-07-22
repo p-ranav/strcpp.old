@@ -1,6 +1,6 @@
 # String Manipulation Header-only Library for C++
 
-## Split that String!
+## Split an input string using a delimiter string
 
 ```cpp
 #include <strcpp.h>
@@ -29,7 +29,8 @@ int main() {
 }
 ```
 
-## Slice that Pie!
+## Slice an input string like in Python
+
 ```cpp
 #include <strcpp.h>
 
@@ -47,7 +48,7 @@ int main() {
 }
 ```
 
-## String Containment
+## Check if string contains sub-string
 
 ```cpp
 #include <strcpp.h>
