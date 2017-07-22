@@ -130,12 +130,14 @@ int main() {
 
 int main() {
   std::string input = "Ha";
-  std::cout << strcpp::repeat(input, 5) << std::endl;      // "HaHaHaHaHa"
-  std::cout << strcpp::repeat(input, 5, " ") << std::endl; // "Ha Ha Ha Ha Ha"
+  std::cout << strcpp::repeat(input, 5) << std::endl;           // "HaHaHaHaHa"
+  std::cout << strcpp::repeat(input, 5, " ") << std::endl;      // "Ha Ha Ha Ha Ha"
 
   input = "Ch";
-  std::cout << strcpp::repeat(strcpp::repeat(input, 2, "ooo!"), 3, " ") 
-    << std::endl;                                          // "Chooo!Chooo! Chooo!Chooo! Chooo!Chooo!"
+  auto result = strcpp::repeat(
+                  strcpp::repeat(input, 2, "ooo!"), 
+                3, " ");
+  std::cout << result << std::endl;                             // "Chooo!Chooo! Chooo!Chooo! Chooo!Chooo!"                                                    
 }
 ```
 
