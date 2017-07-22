@@ -123,7 +123,7 @@ int main() {
 }
 ```
 
-## Repeat input string some number of times and optionally with a connector string
+## Repeat input string for some number of times, optionally with a connector string
 
 ```cpp
 #include <strcpp.h>
