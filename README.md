@@ -3,9 +3,7 @@
 ## Split an input string using a delimiter string
 
 ```cpp
-#include <strcpp.h>
-
-int main() {
+{
 
   std::string input = "We are the champions";     // input string
   std::vector<std::string> result;                // result vector
@@ -25,16 +23,14 @@ int main() {
 
   auto length = strcpp::length(message);          // length = 14
 
-  return 0;
 }
 ```
 
 ## Slice an input string like in Python
 
 ```cpp
-#include <strcpp.h>
+{
 
-int main() {
   std::string input = "Hello World";
   // End index is optional and defaults to end of string
   std::cout << strcpp::slice(input, 0) << std::endl;     // All but the first zero characters  - "Hello World"
@@ -44,16 +40,14 @@ int main() {
   std::cout << strcpp::slice(input, 3, 8) << std::endl;  // After third till eigth character   - "lo Wo"
   std::cout << strcpp::slice(input, -3) << std::endl;    // Just the last three characters     - "rld"
   std::cout << strcpp::slice(input, 0, -3) << std::endl; // All but the last three characters  - "Hello Wo"
-  return 0;
+
 }
 ```
 
 ## Check if an input string contains sub-string
 
 ```cpp
-#include <strcpp.h>
-
-int main() {
+{
 
   std::string input = "ERROR::Houston, we have a problem!";
 
@@ -72,16 +66,14 @@ int main() {
     std::cout << "Input string does not contain \"PROBLEM\"\n";         // check returns false and prints message
   }
 
-  return 0;
 }
 ```
 
 ## Count number of times an input string contains a sub-string
 
 ```cpp
-#include <strcpp.h>
+{
 
-int main() {
   std::string input = "Hello World!";
   std::cout << strcpp::count(input, "l") << std::endl;          // prints 3
   std::cout << strcpp::count(input, "llo") << std::endl;        // prints 1
@@ -92,16 +84,14 @@ int main() {
 
   std::string them_spaces = "Count, the number of          spaces";
   std::cout << strcpp::count(them_spaces, " ") << std::endl;    // prints 13
-  return 0;
+
 }
 ```
 
 ## Check if an input string starts with or ends with some character
 
 ```cpp
-#include <strcpp.h>
-
-int main() {
+{
   std::string input = "What's up with the Quaithe?";
 
   if (strcpp::starts_with(input, 'W')) {
@@ -119,16 +109,15 @@ int main() {
   if (strcpp::ends_with(input, '?')) {                                 // check returns true and prints message
     std::cout << "Input string is a question\n";
   }
-  return 0;
+
 }
 ```
 
 ## Repeat input string for some number of times, optionally with a connector string
 
 ```cpp
-#include <strcpp.h>
+{
 
-int main() {
   std::string input = "Ha";
   std::cout << strcpp::repeat(input, 5) << std::endl;           // "HaHaHaHaHa"
   std::cout << strcpp::repeat(input, 5, " ") << std::endl;      // "Ha Ha Ha Ha Ha"
@@ -138,7 +127,7 @@ int main() {
                   strcpp::repeat(input, 2, "ooo!"), 
                 3, " ");
   std::cout << result << std::endl;                             // "Chooo!Chooo! Chooo!Chooo! Chooo!Chooo!"
-  return 0;
+
 }
 ```
 

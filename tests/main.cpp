@@ -95,6 +95,14 @@ void repeat_test() {
   std::cout << result << std::endl;                             // "Chooo!Chooo! Chooo!Chooo! Chooo!Chooo!"
 }
 
+void case_change_test() {
+  std::string input = "this is some lowercase string";
+  std::cout << strcpp::upper(input) << std::endl;               // "THIS IS SOME LOWERCASE STRING"
+
+  input = "ACCIDENTALLY ENABLED CAPS LOCK!!!";
+  std::cout << strcpp::lower(input) << std::endl;               // "accidentally enabled caps lock!!!"
+}
+
 int main() {
   split_test();
   slice_test();
@@ -102,6 +110,7 @@ int main() {
   starts_ends_test();
   count_test();
   repeat_test();
+  case_change_test();
   system("PAUSE");
   return 0;
 }

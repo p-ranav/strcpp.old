@@ -128,4 +128,18 @@ namespace strcpp {
     return result;
   }
 
+  std::string upper(std::string input) {
+    std::string result;
+    result.resize(input.size());
+    std::transform(input.begin(), input.end(), result.begin(), ::toupper);
+    return result;
+  }
+
+  std::string lower(std::string input) {
+    std::string result;
+    result.resize(input.size());
+    std::transform(input.begin(), input.end(), result.begin(), ::tolower);
+    return result;
+  }
+
 }
