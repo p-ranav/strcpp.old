@@ -129,6 +129,36 @@
 }
 ```
 
+## strcpp::find
+
+```cpp
+{
+  std::string input = "I scream, you scream, we all scream for icecream!";
+  size_t find_index = strcpp::find(input, "you");                            // Index = 10
+  std::cout << find_index << std::endl;
+}
+```
+
+## strcpp::find_first
+
+```cpp
+{
+  std::string input = "I scream, you scream, we all scream for icecream!";
+  size_t find_index = strcpp::find_first(input, "cream");                    // Index = 3
+  std::cout << find_index << std::endl;
+}
+```
+
+## strcpp::find_last
+
+```cpp
+{
+  std::string input = "I scream, you scream, we all scream for icecream!";
+  size_t find_index = strcpp::find_last(input, "cream");                     // Index = 47
+  std::cout << find_index << std::endl;
+}
+```
+
 ## strcpp::replace
 
 ```cpp
