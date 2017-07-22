@@ -170,9 +170,9 @@
 ```cpp
 {
   std::string input = "   Hello World!   ";
-  std::cout << strcpp::strip(input) << std::endl;    // "Hello World!"
-  std::cout << strcpp::lstrip(input) << std::endl;   // "Hello World!   "
-  std::cout << strcpp::rstrip(input) << std::endl;   // "   Hello World!"
+  std::cout << strcpp::trim(input) << std::endl;    // "Hello World!"
+  std::cout << strcpp::ltrim(input) << std::endl;   // "Hello World!   "
+  std::cout << strcpp::rtrim(input) << std::endl;   // "   Hello World!"
 }
 ```
 

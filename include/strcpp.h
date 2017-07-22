@@ -232,4 +232,9 @@ namespace strcpp {
     return result;
   }
 
+  // Returns true if the two input strings are equal
+  bool equal(std::string lhs, std::string rhs) {
+    return  (lhs.compare(rhs) == 0);
+  }
+
 }
