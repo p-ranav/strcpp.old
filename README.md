@@ -94,7 +94,7 @@
 }
 ```
 
-### strcpp::ends_with
+## strcpp::ends_with
 
 ```cpp
 {
