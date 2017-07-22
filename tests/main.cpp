@@ -184,6 +184,8 @@ void format_test() {
   std::string output = strcpp::format("Roses are {0}, Violets are {1}, Sugar is {2}, And so are {3}!",
                                       { "red", "blue", "sweet", "you" });
   std::cout << output << std::endl; // "Roses are red, Violets are blue, Sugar is sweet, And so are you!"
+
+  std::cout << strcpp::format("{0}!... {0}!", {"Hodor"}) << std::endl; // "Hodor!... Hodor!"
 }
 
 int main() {
