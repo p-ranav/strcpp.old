@@ -1,0 +1,5 @@
+#include <strcpp.h>
+
+int main() {
+  return 0;
+}
