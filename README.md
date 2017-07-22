@@ -27,7 +27,7 @@
   auto split_string = strcpp::split(input, ". ");                    // split using period
   std::string joined_string = strcpp::join(split_string, " ");       // join result of split
   std::string output = strcpp::replace(joined_string, " not", "");   // remove the word 'not'
-  std::cout << output << std::endl;
+  std::cout << output << std::endl;                                  // "This is how sentences work."
 
   input = "Transaction_date, Product, Price, State";                 // some csv data
   split_string = strcpp::split(input, ", ");                         // split using comma
