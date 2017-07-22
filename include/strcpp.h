@@ -7,18 +7,18 @@
 namespace strcpp {
 
   // returns length of input string
-  size_t length(std::string input) {
+  size_t length(const std::string input) {
     return input.size();
   }
 
   // returns true/false if input string contains search string
   bool contains(std::string input, std::string search_string, bool ignore_case = false) {
     bool result = false;
-    if (ignore_case) {
+    if (ignore_case) { // if case is to be ignored, convert both input and search string to all upper case
       std::transform(input.begin(), input.end(), input.begin(), ::toupper);
       std::transform(search_string.begin(), search_string.end(), search_string.begin(), ::toupper);
     }
-    if (input.find(search_string) != std::string::npos) {
+    if (input.find(search_string) != std::string::npos) { // search using find algorithm
       result = true;
     }
     return result;
@@ -27,31 +27,30 @@ namespace strcpp {
   // returns a sliced string
   std::string slice(std::string input, int start_index, int end_index = std::string::npos) {
     std::string result;
-    if (end_index == std::string::npos) {
-      if (start_index < 0) {
+    if (end_index == std::string::npos) { // if end index is default, i.e., till end of string
+      if (start_index < 0) { // if start index is negative, then start start_index characters from end of string
         for (int i = static_cast<int>(input.size() + start_index); i < input.size(); i++) {
           result += input[i];
         }
       }
-      else {
+      else { // start_index is not negative; iterate from start_index till end of string
         for (int i = static_cast<int>(start_index); i < input.size(); i++) {
           result += input[i];
         }
       }
     }
-    else {
-      if (end_index < 0) {
+    else { // end_index is not std::string::npos
+      if (end_index < 0) { // if end_index is negative, start from start_index and go till (end_of_string + end_index)
         for (int i = static_cast<int>(start_index); i < input.size() + end_index; i++) {
           result += input[i];
         }
       }
-      else {
+      else { // if end_index is not negative either, then this is the trivial case
         for (int i = start_index; i < end_index; i++) {
           result += input[i];
         }
       }
     }
-
     return result;
   }
 
@@ -61,15 +60,16 @@ namespace strcpp {
   std::vector<std::string> split(std::string input, std::string delimiter, 
     std::vector<std::string>& result = std::vector<std::string>()) {
     size_t counter_position = 0;
-    size_t delimiter_position = input.find(delimiter);
-    if (delimiter_position != std::string::npos) {
+    size_t delimiter_position = input.find(delimiter); // checkf if delimiter is in input string
+    if (delimiter_position != std::string::npos) { // if delimiter position is not end_of_string
       std::string split_string = input.substr(counter_position, delimiter_position);
       delimiter_position += delimiter.size();
       std::string split_remaining = input.erase(counter_position, delimiter_position);
       result.push_back(split_string);
+      // Recursion! Recursion everywhere!
       std::vector<std::string> result_remaining = split(split_remaining, delimiter, result);
     }
-    else {
+    else { // delimiter not in input string. Just add entire input string to result vector
       result.push_back(input);
     }
     return result;
