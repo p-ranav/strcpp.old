@@ -239,6 +239,45 @@
 }
 ```
 
+### strcpp::upper
+
+```cpp
+{
+  std::string input = "this is some lowercase string";
+  std::cout << strcpp::upper(input) << std::endl;               // "THIS IS SOME LOWERCASE STRING"
+}
+```
+
+## strcpp::is_upper
+
+```cpp
+{
+  std::string input = "Hello World!";
+  if (strcpp::is_upper(input))
+    std::cout << "There is at least one upper case character in input" << std::endl;
+}
+```
+
+## strcpp::lower
+
+```cpp
+{
+  std::string input = "ACCIDENTALLY ENABLED CAPS LOCK!!!";
+  std::cout << strcpp::lower(input) << std::endl;               // "accidentally enabled caps lock!!!"
+}
+```
+
+## strcpp::is_lower
+
+```cpp
+{
+  std::string input = "Hello World!";
+  input = strcpp::lower(input);
+  if (strcpp::is_lower(input))
+    std::cout << "All alphabets in the input string are lower case" << std::endl;
+}
+```
+
 ## LICENSE
 
 Copyright (c) 2017 Pranav Srinivas Kumar <pranav.srinivas.kumar@gmail.com>
