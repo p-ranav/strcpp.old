@@ -131,7 +131,7 @@
 }
 ```
 
-## Find and Replace
+## Find and Replace sub-string in input string
 
 ```cpp
 {
