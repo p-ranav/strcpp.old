@@ -5,6 +5,7 @@
 #include <map>
 #include <algorithm>
 #include <cctype>
+#include <regex>
 
 namespace strcpp {
 
@@ -252,6 +253,18 @@ namespace strcpp {
   // finds last occurrence of sub-string in input string
   size_t find_last(std::string input, std::string search_string) {
     return input.find_last_of(search_string);
+  }
+
+  // performs std regex search and returns a vector of matched results
+  std::vector<std::string> find_regex(std::string input, std::string regex_string) {
+    std::vector<std::string> results;
+    std::smatch match_result;
+    while (std::regex_search(input, match_result, std::regex(regex_string))) {
+      for (auto& m : match_result)
+        results.push_back(m);
+      input = match_result.suffix();
+    }
+    return results;
   }
 
 }

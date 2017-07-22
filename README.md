@@ -159,6 +159,27 @@
 }
 ```
 
+## strcpp::find_regex
+
+```cpp
+{
+  std::string log(R"(
+        Speed : 366
+        Mass  :	 35
+        Speed : 378
+        Mass  :	 32
+        Speed : 400
+	      Mass  :	 30)");
+  std::string regex_string = R"(Speed : \d*)";
+  auto results = strcpp::find_regex(log, regex_string);  
+  // ["Speed : 366", "Speed : 378", "Speed : 400"]
+
+  std::string file_path = "/home/pranav/dev/FILE_SomeStringOfInterest_EVENT.bash";
+  results = strcpp::find_regex(file_path, ".*FILE_(\\w+)_EVENT\\.bash.*");
+  // results: ["/home/pranav/dev/FILE_SomeStringOfInterest_EVENT.bash", "SomeStringOfInterest"]
+}
+```
+
 ## strcpp::replace
 
 ```cpp
